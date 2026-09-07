@@ -89,4 +89,4 @@ def _secret_session() -> str:
 SESSION_SECRET = _secret_session()
 
 # Version du build.
-VERSION = "0.0.34"
+VERSION = "0.0.35"

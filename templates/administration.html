@@ -110,7 +110,7 @@
 </form>
 
 <h2 class="fr-h5 fr-mt-5w">Configuration de l'IA</h2>
-<p class="fr-hint-text">Fournisseur compatible OpenAI : Albert, OpenAI, Mistral, ou LLM local (Ollama, vLLM…). Modifiable à tout moment.</p>
+<p class="fr-hint-text">Fournisseur compatible OpenAI : Albert, OpenAI, Claude, Gemini, Mistral, DeepSeek… ou LLM local (Ollama, vLLM). Modifiable à tout moment.</p>
 <div class="fr-grid-row fr-grid-row--gutters">
   <div class="fr-col-12 fr-col-md-4"><div class="fr-select-group">
     <label class="fr-label" for="ia-prov">Fournisseur (pré-remplit l'URL)</label>
@@ -259,6 +259,15 @@ const IAPROV={
 };
 const g=id=>document.getElementById(id);
 g("ia-prov").innerHTML=Object.entries(IAPROV).map(([k,v])=>`<option value="${k}">${v.label}</option>`).join("");
+// Repositionner le menu sur le fournisseur réellement enregistré (d'après l'URL de base).
+(function(){
+  const cur=(g("ia-url").value||"").replace(/\/+$/,"");
+  if(cur){
+    let sel="autre";
+    for(const [k,v] of Object.entries(IAPROV)){ if(v.base && v.base.replace(/\/+$/,"")===cur){ sel=k; break; } }
+    g("ia-prov").value=sel;
+  }
+})();
 g("ia-prov").addEventListener("change",()=>{const b=IAPROV[g("ia-prov").value].base; if(b) g("ia-url").value=b;});
 g("ia-test").onclick=async()=>{
   g("ia-res").innerHTML='<p class="fr-hint-text">Test en cours…</p>';

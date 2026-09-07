@@ -3,6 +3,16 @@
 Toutes les évolutions notables de Clausio. Format inspiré de *Keep a Changelog*.
 Les versions publiques sont taguées sur le dépôt GitHub.
 
+## [0.0.35] — 2026-08-06
+
+### 🔧 Corrections
+
+- **Configuration de l'IA — affichage du fournisseur.** Le réglage (URL, clé, modèle)
+  était bien enregistré, mais au rechargement de la page le menu « Fournisseur »
+  se réaffichait sur « Albert » au lieu du fournisseur choisi (Gemini, Claude…),
+  laissant croire à une réinitialisation. Le menu reflète désormais le fournisseur
+  réellement enregistré. Le texte d'aide liste les nouveaux moteurs.
+
 ## [0.0.34] — 2026-08-06
 
 Version consolidée regroupant, pour la publication, l'ensemble des évolutions
