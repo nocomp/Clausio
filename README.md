@@ -288,8 +288,7 @@ Voir [CHANGELOG.md](CHANGELOG.md) pour le détail des évolutions et des correct
 
 ## Licence
 
-Distribué sous licence **MIT** (voir `LICENSE`). Adaptez-la à votre contexte si besoin — la
-licence **EUPL-1.2** est une alternative courante dans le secteur public.
+Distribué sous licence **MIT** .
 
 ---
 
